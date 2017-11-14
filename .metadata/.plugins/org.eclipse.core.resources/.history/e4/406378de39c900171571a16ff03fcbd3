@@ -1,0 +1,125 @@
+package com.hibernate.Dao;
+	import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hibernate.model.Employee;
+
+	public class DAOClass {
+		public static void insertRecord() {
+
+			Scanner scanner = new Scanner(System.in);
+
+			String firstName, lastName;
+			int id;
+
+			System.out.println("Enter the id......");
+			id = scanner.nextInt();
+
+			System.out.println("Enter the FirstName....");
+			firstName = scanner.next();
+
+			System.out.println("Enter the LastName.........");
+			lastName = scanner.next();
+
+			SessionFactory factory = sessionFactoryObject();
+			Session session = factory.openSession();
+
+			Transaction transaction = session.beginTransaction();
+
+			Employee employee = new Employee();
+			employee.setId(id);
+			employee.setFirstName(firstName);
+			employee.setLastName(lastName);
+			session.save(employee);
+			transaction.commit();
+			scanner.close();
+			System.out.println("Data Inserted Sucessfully...................");
+
+		}
+
+		/**
+		 * method to delete the records from database
+		 */
+		public static void deleteRecord() {
+
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Enter the id....");
+			int id = scanner.nextInt();
+			SessionFactory factory = sessionFactoryObject();
+			Session session = factory.openSession();
+			Transaction transaction = session.beginTransaction();
+
+			Employee employee = session.load(Employee.class, id);
+			session.delete(employee);
+			System.out.println("Records deleted successfully....... ");
+
+			transaction.commit();
+			session.close();
+		}
+
+		/**
+		 * method to display the record from database
+		 */
+		public static void displayRecord() {
+			SessionFactory factory = sessionFactoryObject();
+			Session session = factory.openSession();
+			Transaction transaction = session.beginTransaction();
+			System.out.println("Records are..........");
+
+			List employees = session.createQuery("FROM Employee").list();
+			for (Iterator iterator = employees.iterator(); iterator.hasNext();) {
+				Employee employee = (Employee) iterator.next();
+				System.out.print("First Name--> " + employee.getFirstName());
+				System.out.print("  Last Name--> " + employee.getLastName());
+				System.out.println("  ID--> " + employee.getId());
+			}
+			transaction.commit();
+			session.close();
+
+		}
+
+		/**
+		 * method to update the record in databse
+		 */
+		public static void updateRecord() {
+			SessionFactory factory = sessionFactoryObject();
+			Session session = factory.openSession();
+
+			Transaction transaction = session.beginTransaction();
+			Scanner scanner = new Scanner(System.in);
+			int id;
+			System.out.println("Enter the id......");
+			id = scanner.nextInt();
+			Employee employee = new Employee() ;
+			employee.setId(id);
+			
+			System.out.println("Enter the first name...");
+			String firstName = scanner.next();
+			employee.setFirstName(firstName);
+			
+			System.out.println("Enter the last Name");
+			String lastName = scanner.next();
+			employee.setLastName(lastName);
+			
+			session.update(employee);
+					
+			transaction.commit();
+			session.close();
+			System.out.println("Records are update sucessfully............");
+		}
+
+		public static SessionFactory sessionFactoryObject() {
+			Configuration cfg = new Configuration();
+			cfg.configure("hibernate.cfg.xml");
+			SessionFactory session = cfg.buildSessionFactory();
+			return session;
+		}
+
+	}
+
+}
