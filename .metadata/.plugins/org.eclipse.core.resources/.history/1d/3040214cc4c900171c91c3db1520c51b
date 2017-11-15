@@ -1,0 +1,11 @@
+package com.hibernate.HibernateOneToOneMapping;
+import com.hibernate.model.Address;
+import com.hibernate.model.Student;
+public class App 
+{
+	public static void main( String[] args )
+	{
+		System.out.println( "Hello World!" );
+		
+	}
+}

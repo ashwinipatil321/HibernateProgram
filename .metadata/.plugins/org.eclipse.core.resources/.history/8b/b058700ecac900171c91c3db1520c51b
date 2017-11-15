@@ -1,0 +1,20 @@
+package com.hibernate.Dao;
+
+import org.hibernate.Session;
+
+import com.hibernate.model.Passport;
+import com.hibernate.model.Person;
+
+public class DaoClass {
+	 public static void getPersonDetails(int id)
+	    {
+	        Session session = factory.openSession();        
+	        Person person = (Person)session.get(Person.class,id);        
+	        Passport passport  = person.getPassport();
+	 
+	        String name = person.getName();
+	        String number=passport.getNumber();
+	        System.out.println("Person Name =" +  name);
+	        System.out.println("Passport Number = " + number);
+	    }
+}

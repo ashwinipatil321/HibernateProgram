@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;HibernateCrudOperation&apos;" deleteContents="false" description="Delete resource &apos;HibernateCrudOperation&apos;" element1="/HibernateCrudOperation" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1510662222651"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;HibernateCrudOperation&apos;" deleteContents="false" description="Delete resource &apos;HibernateCrudOperation&apos;" element1="/HibernateCrudOperation" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1510662222651"/>&#x0A;<refactoring comment="Delete resource &apos;HibernateOneToMany&apos;" deleteContents="false" description="Delete resource &apos;HibernateOneToMany&apos;" element1="/HibernateOneToMany" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1510737791457"/>
 </session>

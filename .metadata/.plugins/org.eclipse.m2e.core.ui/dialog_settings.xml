@@ -44,9 +44,9 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/bridgeit/Ashwini/HibernateProgram"/>
 			<item value="/home/bridgeit/Ashwini/Hibernate"/>
 			<item value="/home/bridgeit/Ashwini"/>
-			<item value="/home/bridgeit/Ashwini/HibernateProgram"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -59,12 +59,18 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.hibernate.oneToManyAnnotation"/>
+			<item value="com.hibernate.HibernateOneToMany"/>
+			<item value="com.hibernate.HibernateOneToOneMapping"/>
 			<item value="com.hibernate.HibernateProjectOfCrud"/>
 		</list>
 		<list key="groupId">
 			<item value="com.hibernate"/>
 		</list>
 		<list key="artifactId">
+			<item value="oneToManyAnnotation"/>
+			<item value="HibernateOneToMany"/>
+			<item value="HibernateOneToOneMapping"/>
 			<item value="HibernateProjectOfCrud"/>
 		</list>
 		<list key="projectNameTemplate">

@@ -1,0 +1,72 @@
+package com.hibernate.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name="cricket")
+public class CricketMatch {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="crricketTeam_Id")
+	private int id;
+	@Column(name="team1")
+	private String team1;
+	@Column(name="team2")
+	private String team2;
+	@Column(name="umpire")
+	private String umpire;
+	@Column(name="type")
+	private String type;
+
+	@ManyToOne
+	@JoinColumn(name="Id", nullable=false)
+	private Stadium stadium;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTeam1() {
+		return team1;
+	}
+	public void setTeam1(String team1) {
+		this.team1 = team1;
+	}
+	public String getTeam2() {
+		return team2;
+	}
+	public void setTeam2(String team2) {
+		this.team2 = team2;
+	}
+	public String getUmpire() {
+		return umpire;
+	}
+	public void setUmpire(String umpire) {
+		this.umpire = umpire;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Stadium getStadium() {
+		return stadium;
+	}
+	public void setStadium(Stadium stadium) {
+		this.stadium = stadium;
+	}
+	@Override
+	public String toString() {
+		return "CricketMatch [team1=" + team1 + ", team2=" + team2 + ", umpire=" + umpire + ", type=" + type
+				+ ", stadium=" + stadium + ", id=" + id + "]";
+	}
+}

@@ -1,0 +1,19 @@
+package com.hibernate.model;
+
+public class Customer {
+public String custmorName;
+public int custmorID;
+
+public String getCustmorName() {
+	return custmorName;
+}
+public void setCustmorName(String custmorName) {
+	this.custmorName = custmorName;
+}
+public int getCustmorID() {
+	return custmorID;
+}
+public void setCustmorID(int custmorID) {
+	this.custmorID = custmorID;
+}
+}

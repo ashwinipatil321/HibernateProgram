@@ -1,0 +1,7 @@
+package com.hibernate.model;
+
+public class Employee {
+public int Id;
+public String Address;
+public String City;
+}

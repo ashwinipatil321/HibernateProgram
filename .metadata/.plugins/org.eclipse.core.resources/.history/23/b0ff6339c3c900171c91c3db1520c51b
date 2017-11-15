@@ -1,0 +1,11 @@
+package com.hibernate.Dao;
+
+public class oneToOneDaoClass {
+	
+
+	 private static SessionFactory sesssionFactoryObject() {
+	    	Configuration cfg = new Configuration().configure("hibernate.cfg.xml").Add;
+	    	
+	    	SessionFactory factory = cfg.buildSessionFactory();
+			return factory;
+}

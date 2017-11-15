@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Nov, 2017 10:01:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.hibernate.model.Address" table="ADDRESS">
+        <id name="addressId" type="int">
+            <column name="ADDRESSID" />
+            <generator class="assigned" />
+        </id>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <many-to-one name="s" class="com.hibernate.model.Student" fetch="join">
+            <column name="S" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+package com.hibernate.HibernateOneToMany;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import com.hibernate.model.CricketMatch;
+
+public class Stadium {
+	 private int id;
+     private String name;
+     private String country;
+     private int capacity;
+private Set<CricketMatch> matches= new HashSet<CricketMatch>();
+}

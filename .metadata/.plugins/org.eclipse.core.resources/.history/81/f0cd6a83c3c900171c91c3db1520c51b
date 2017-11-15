@@ -1,0 +1,19 @@
+package com.hibernate.HibernateOneToOneMapping;
+import com.hibernate.model.Address;
+import com.hibernate.model.Student;
+public class App 
+{
+	public static void main( String[] args )
+	{
+		System.out.println( "Hello World!" );
+		Student s=new Student();
+		s.setStudentId(100);
+		s.setStudentName("java4s");
+
+		 Address ad = new Address();
+		 ad.setAddressId(509);
+		 ad.setCity("Carry");
+		 ad.setState("NC");
+		 ad.setS(s);
+	}
+}

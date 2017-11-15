@@ -1,0 +1,34 @@
+package com.hibernate.Dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.hibernate.model.Address;
+import com.hibernate.model.Student;
+
+public class oneToOneDaoClass {
+	
+	Configuration cfg = new Configuration().configure().addAnnotatedClass(Student.class);
+	 
+	 
+	 SessionFactory factory = cfg.buildSessionFactory();
+	 Session session = factory.openSession(); 
+	 
+	 Student s=new Student();
+	 s.setStudentId(100);
+	 s.setStudentName("java4s");
+	 
+	
+	 
+	     Transaction tx = session.beginTransaction();
+	 
+	               session.save(ad);
+	 
+	     tx.commit();
+	 
+	     session.close();
+	     System.out.println("One to One is Done..!!");
+	     factory.close();
+}

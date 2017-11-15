@@ -1,0 +1,17 @@
+package com.hibernate.Dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import com.hibernate.model.Passport;
+import com.hibernate.model.Person;
+
+public class DaoClass {
+	private static SessionFactory factory;
+	 public static void getPersonDetails(int id)
+	    {
+		 
+		 
+	    }
+}
